@@ -25,7 +25,7 @@ class ItemScreen2 extends StatelessWidget {
         ),
         title: Text('Cheese Pizza', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,)),
 
-          
+
           actions: [
             Consumer<CartProvider>(
               builder: (context, cartProvider, child) {
@@ -33,6 +33,7 @@ class ItemScreen2 extends StatelessWidget {
                 return Stack(
                   alignment: Alignment.topRight,
                   children: [
+                    
                     IconButton(
                       icon: Icon(Icons.shopping_cart),
                       onPressed: () {
