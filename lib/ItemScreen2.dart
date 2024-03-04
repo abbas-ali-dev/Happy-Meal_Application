@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:happy_meal/AddToCart2.dart';
@@ -7,7 +6,6 @@ import 'package:happy_meal/controller/provider.dart';
 import 'package:provider/provider.dart';
 
 import 'HomeScreen.dart';
-
 
 class ItemScreen2 extends StatelessWidget {
   const ItemScreen2({super.key});
