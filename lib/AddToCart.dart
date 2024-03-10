@@ -1,6 +1,3 @@
-
-
-
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
@@ -9,7 +6,6 @@ import 'package:happy_meal/Cart_page.dart';
 import 'package:happy_meal/controller/provider.dart';
 import 'package:happy_meal/user_detail.dart';
 import 'package:provider/provider.dart';
-
 
 
 class AddToCart extends StatefulWidget {
