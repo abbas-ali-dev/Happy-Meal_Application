@@ -21,6 +21,7 @@ class _AddToCartState extends State<AddToCart> {
   int price = 950;
   int total = 0;
   int itemCount = 0;
+  
 
   void add(){
     setState(() {
