@@ -22,6 +22,7 @@ class _AddToCartState extends State<AddToCart> {
   int total = 0;
   int itemCount = 0;
 
+
   
 
   void add(){
