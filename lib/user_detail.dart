@@ -7,7 +7,6 @@ class UserDetailsPage extends StatefulWidget {
   @override
   _UserDetailsPageState createState() => _UserDetailsPageState();
 }
-
 class _UserDetailsPageState extends State<UserDetailsPage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -25,7 +24,6 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
       );
       return;
     }
-
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
