@@ -15,7 +15,6 @@ class CartPage extends StatelessWidget {
       totalCost += item.price;
     }
 
-    
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart'),
