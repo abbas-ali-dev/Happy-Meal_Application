@@ -14,7 +14,7 @@ class CartPage extends StatelessWidget {
     for (var item in cartItems) {
       totalCost += item.price;
     }
-    
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart'),
@@ -43,7 +43,9 @@ class CartPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: Text('Remove from Cart', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: Text('Remove from Cart',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold)),
                 ),
               ],
             ),
@@ -56,13 +58,18 @@ class CartPage extends StatelessWidget {
         child: Center(
           child: Text(
             'Total Cost: \$${totalCost.toStringAsFixed(2)}',
-            style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
       ),
       bottomNavigationBar: InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => UserDetailsPage(),));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UserDetailsPage(),
+              ));
         },
         child: Container(
           height: 60,
@@ -75,7 +82,11 @@ class CartPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Enter Your Confirmation', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold)),
+              Text('Enter Your Confirmation',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
               SizedBox(width: 8),
               Icon(Icons.arrow_forward, color: Colors.white),
             ],
