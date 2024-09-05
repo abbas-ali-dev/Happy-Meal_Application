@@ -23,6 +23,7 @@ class ItemScreen1 extends StatelessWidget {
         ),
         title: Text('Chicken Burger', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,)),
 
+        
         actions: [
           Consumer<CartProvider>(
             builder: (context, cartProvider, child) {
