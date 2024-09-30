@@ -33,6 +33,8 @@ class ItemScreen2 extends StatelessWidget {
                   alignment: Alignment.topRight,
                   children: [
 
+                    
+
                     IconButton(
                       icon: Icon(Icons.shopping_cart),
                       onPressed: () {
