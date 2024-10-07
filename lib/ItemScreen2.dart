@@ -32,8 +32,6 @@ class ItemScreen2 extends StatelessWidget {
                 return Stack(
                   alignment: Alignment.topRight,
                   children: [
-
-
                     
 
                     IconButton(
