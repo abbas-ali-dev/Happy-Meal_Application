@@ -14,38 +14,38 @@ class AddToCart extends StatefulWidget {
 }
 
 class _AddToCartState extends State<AddToCart> {
-
   int items = 0;
   int price = 950;
   int total = 0;
   int itemCount = 0;
 
-
-  void add(){
+  void add() {
     setState(() {
       items = items + 1;
     });
   }
 
-  void minus(){
+  void minus() {
     setState(() {
       items = items - 1;
     });
   }
 
-  void result(){
+  void result() {
     setState(() {
-      total = items*price;
+      total = items * price;
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-        title: Text('Place your Order...', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25,)),
+        title: Text('Place your Order...',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            )),
         actions: [
           Consumer<CartProvider>(
             builder: (context, cartProvider, child) {
@@ -66,16 +66,16 @@ class _AddToCartState extends State<AddToCart> {
                   ),
                   itemCount > 0
                       ? Positioned(
-                    right: 8,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.red,
-                      radius: 10,
-                      child: Text(
-                        itemCount.toString(),
-                        style: TextStyle(fontSize: 12),
-                      ),
-                    ),
-                  )
+                          right: 8,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.red,
+                            radius: 10,
+                            child: Text(
+                              itemCount.toString(),
+                              style: TextStyle(fontSize: 12),
+                            ),
+                          ),
+                        )
                       : SizedBox.shrink(),
                 ],
               );
@@ -83,15 +83,19 @@ class _AddToCartState extends State<AddToCart> {
           ),
         ],
       ),
-
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 20,),
-        
-          Image.asset('assets/images/Burger.png', width: 250,),
-          SizedBox(height: 10,),
-      
+          SizedBox(
+            height: 20,
+          ),
+          Image.asset(
+            'assets/images/Burger.png',
+            width: 250,
+          ),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -99,36 +103,50 @@ class _AddToCartState extends State<AddToCart> {
                   onPressed: () {
                     minus();
                   },
-      
-                  child: Icon(CupertinoIcons.minus_circle,color: Colors.red, size: 40,)),
+                  child: Icon(
+                    CupertinoIcons.minus_circle,
+                    color: Colors.red,
+                    size: 40,
+                  )),
               Padding(
                 padding: EdgeInsets.all(15.0),
-                child: Text('$items', style: TextStyle(fontSize: 30,)),
+                child: Text('$items',
+                    style: TextStyle(
+                      fontSize: 30,
+                    )),
               ),
               TextButton(
                   onPressed: () {
                     add();
                     result();
                     // Add your item to the cart
-                    final cartProvider = Provider.of<CartProvider>(context, listen: false);
-                    cartProvider.addToCart(CartItem(itemName: 'Chicken Burger x1', price: 950.0));
-      
+                    final cartProvider =
+                        Provider.of<CartProvider>(context, listen: false);
+                    cartProvider.addToCart(
+                        CartItem(itemName: 'Chicken Burger x1', price: 950.0));
+
                     // Show a snackbar or navigate to another screen
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Item added to cart', ),
+                        content: Text(
+                          'Item added to cart',
+                        ),
                         duration: Duration(seconds: 1),
                       ),
                     );
                   },
-                  child: Icon(Icons.add_circle_outline, color: Colors.green, size: 40,)
-              ),
+                  child: Icon(
+                    Icons.add_circle_outline,
+                    color: Colors.green,
+                    size: 40,
+                  )),
             ],
           ),
-      
           Column(
             children: [
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.red,
@@ -136,40 +154,32 @@ class _AddToCartState extends State<AddToCart> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text('Click (+) for Tasty Meal', style: TextStyle(fontSize: 30, color: Colors.white)),
+                  child: Text('Click (+) for Tasty Meal',
+                      style: TextStyle(fontSize: 30, color: Colors.white)),
                 ),
-              ),
-          ],
-          ),
-      
-          Column(
-            children: [
-              SizedBox(height: 50,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Your Total Price is' , style: TextStyle(fontSize: 30,)),
-                  Text(' $total/-rs', style: TextStyle(fontSize: 30, color: Colors.red,)),
-      
-                ]
               ),
             ],
           ),
-      
+          Column(
+            children: [
+              SizedBox(
+                height: 50,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Text('Your Total Price is',
+                    style: TextStyle(
+                      fontSize: 30,
+                    )),
+                Text(' $total/-rs',
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.red,
+                    )),
+              ]),
+            ],
+          ),
         ],
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
